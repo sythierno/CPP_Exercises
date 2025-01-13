@@ -98,53 +98,22 @@ Quelle classe de la librairie standard faudrait-il utiliser à la place du table
 
 7. Prenez note des difficultés que vous avez rencontrées durant cet exercice et de comment vous les avez surmontées.
  
+## Exercice 2 - Tableaux dynamiques
 
-## Exercice 2 - Premières erreurs (1h)
+1. Ouvrez le fichier [main.cpp](ex2/main.cpp) et essayez de comprendre ce que font chacune de ses lignes.
 
-> [!IMPORTANT]
-> Pensez à commiter vos changements à la fin de chaque question.
-> Ainsi, si vous souhaitez annuler vos modifications pour revenir au code enregistré à la fin de la question précédente, vous pourrez le faire.
+2. La boucle affichant le contennu du tableau est une boucle classique du C. Transformez là en une boucle `for-each`.
 
-1. Ajoutez un fichier "Person.hpp" dans le répertoire [ex2](ex2) et copiez dedans le code ci-dessous :
-```cpp
-class Person
-{
-public:
-    std::string first_name;
-    std::string surname;
-};
-```
+3. Affichez les valeurs du premier et du dernier élément.
 
-2. Dans le fichier [main.cpp](ex2/main.cpp), ajoutez une fonction `main`.  
-A l'intérieur, instanciez un objet de type `Person` et modifiez ses attributs afin que son prénom soit "Palluche" et son nom de famille "La Faluche".  
-Enfin, ajoutez les instructions permettant d'afficher "La personne s'appelle Palluche La Faluche" (en utilisant les attributs de l'objet bien sûr).
+3. Écrivez un code ajoutant à la fin du tableau d'entiers le double de chaque valeur déjà présente.
 
-3. Essayez de compiler le programme. Modifiez les fichiers [main.cpp](ex2/main.cpp) et [Person.hpp](ex2/Person.hpp) afin de corriger les erreurs si vous en avez.  
-*Indice : pensez à inclure les headers de **TOUS** les symboles que vous avez utilisés !*  
+4. Plutôt que d'écrire en dur les premières valeurs du tableau, complétez le programme afin qu'il demande à l'utilisateur la suite de ces valeurs.
+   On terminera la saisie par la valeur 0.
 
-4. Ajoutez un fichier "Person.cpp" dans le répertoire [ex2](ex2).
-Modifiez le code de la classe `Person` de manière à rendre ses attributs privés : ajoutez un constructeur pour les initialiser et deux getters pour les récupérer. Vous placerez l'implémentation de ces fonctions dans le fichier .cpp.  
-Compilez le fichier "Person.cpp" pour générer le fichier-object associé.  
-Si vous avez des erreurs de syntaxe, essayez de comprendre le message du compilateur pour les corriger.
+5. Permettez à l'utilisateur d'effacer la dernière valeur saisie en entrant un nombre négatif.
 
-5. Modifiez le fichier "main.cpp" de façon à prendre en compte les modifications de la classe `Person`. Compilez ensuite le programme complet.
-
-6. Supprimez le contenu de la fonction `main`. A la place, instanciez un tableau dynamique de `Person`.  
-Modifiez ensuite le programme afin que l'utilisateur puisse entrer le nombre de personnes qu'il désire ajouter au tableau, puis le nom complet de chacune de ses personnes. A la fin, le programme affiche le prénom et le nom de tout le monde.
-
-*Exemple :*  
-```bash
-Nombre de personnes: 3  
-Prenom: Aa  
-Nom: Bb  
-Prenom: Cc  
-Nom: Dd  
-Prenom: Ee  
-Nom: Ff  
-Les personnes sont Aa Bb, Cc Dd, Ee Ff.
-```
-
-7. Prenez note des difficultés que vous avez rencontrées durant cet exercice et de comment vous les avez surmontées.
+6. Prenez note des difficultés que vous avez rencontrées durant cet exercice et de comment vous les avez surmontées.
 
 ## Exercice 3 - Questions (30 min)
 
