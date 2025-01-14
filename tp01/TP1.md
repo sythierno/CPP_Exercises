@@ -44,7 +44,7 @@ git merge work
 </details>
 
 <details>
-<summary>Ecrire dans la console</summary>
+<summary>Ecrire dans la console en C++</summary>
 
 ```cpp
 std::cout << "Value of var_a is:" << var_a << "." << std::endl;
@@ -52,7 +52,7 @@ std::cout << "Value of var_a is:" << var_a << "." << std::endl;
 </details>
 
 <details>
-<summary>Lire depuis la console</summary>
+<summary>Lire depuis la console en C++</summary>
 
 ```cpp
 std::cin >> var_a;
@@ -60,7 +60,7 @@ std::cin >> var_a;
 </details>
 
 <details>
-<summary>Utiliser un tableau dynamique</summary>
+<summary>Utiliser un tableau dynamique en C++</summary>
 
 ```cpp
 auto values = std::vector<int>{ 1, 2, 3 };
@@ -70,7 +70,7 @@ values.push_back(4);
 </details>
 
 <details>
-<summary>Utiliser une chaîne de caractères</summary>
+<summary>Utiliser une chaîne de caractères en C++</summary>
 
 ```cpp
 auto first_name = std::string { "Medor" };
@@ -149,9 +149,3 @@ Que faudrait-il faire pour la résoudre ?
 
 6. Ajoutez le mot-clef `inline` devant la définition de la fonction `print_bye` dans [utils.hpp](ex3/utils.hpp). Que constatez-vous quand vous réessayez de compiler le programme ?  
 Selon-vous, quel est l'effet du mot-clef `inline` sur le linker ?
-
-## Pour terminer
-
-Commitez vos modifications si ce n'est pas déjà fait.  
-Revenez sur la branche `master`. Vous devriez voir disparaître tout votre beau travail.  
-Si vous souhaitez le retrouver, vous pouvez soit retourner sur la branche `tp1`, soit merger cette branche sur la branche `master`.
