@@ -33,36 +33,44 @@ Sachant que `_value` ne peut pas être négatif, quel type pouvez-vous utiliser 
 Pour `_color`, vous pouvez utiliser `std::string`.
 3. Définissez un constructeur à deux paramètres permettant d'initialiser les deux attributs de la classe.  
 Vous placerez l'implémentation de cette fonction dans le fichier `Card.cpp`.
-4. Ajoutez une fonction-membre `print` qui affichera dans un premier temps : `"<value> de <color>"`. Par exemple, pour le roi de carreau, on pourra afficher `"13 de Carreau"`.
+4. Ajoutez une fonction-membre `print` qui affichera dans un premier temps : `"<value> de <color>"`. Par exemple, pour le roi de carreau, on pourra afficher `"13 de Carreau"` (sans saut de ligne final).
 5. Dans le fichier `main.cpp`, définissez une fonction `main` et ajoutez-y le code suivant pour vérifier que tout fonctionne :
-```cpp
-Card c1 { 8, "Pique" };
-c1.print();
-```
+
+    ```cpp
+    Card c1 { 8, "Pique" };
+    c1.print();
+    ```
+
 6. Indiquez maintenant que `c1` est `const` et vérifiez que le code compile toujours. Ajoutez ce qu'il faut sur la définition de `print` si ce n'est pas le cas.
-```cpp
-const Card c1 { 8, "Pique" };
-c1.print();
-```
+
+    ```cpp
+    const Card c1 { 8, "Pique" };
+    c1.print();
+    ```
+
 7. Vous allez maintenant définir un opérateur d'égalité pour la classe `Card` en tant que **fonction-membre**. Celui-ci aura pour objectif de vérifier si deux cartes ont la même valeur (on ne considère pas la couleur).  
 Ajoutez les instructions suivantes dans le `main` pour vérifier que votre code est juste :
-```cpp
-Card c2 { 8, "Pique" };
-std::cout << (c2 == c1) << std::endl; // -> 1
-Card c3 { 10, "Carreau" };
-std::cout << (c2 == c3) << std::endl; // -> 0 
-```
+
+    ```cpp
+    Card c2 { 8, "Pique" };
+    std::cout << (c2 == c1) << std::endl; // -> 1
+    Card c3 { 10, "Carreau" };
+    std::cout << (c2 == c3) << std::endl; // -> 0 
+    ```
+
 8. Ajoutez `const` devant `c2` et `c3`.  
 Vérifiez que le code compile toujours et modifiez ce qu'il faut si ce n'est plus le cas.
 9. Définissez maintenant l'opérateur d'infériorité stricte, sur le même principe que l'opérateur d'égalité, afin de faire fonctionner le code suivant :
-```cpp
-std::cout << (c1 < c2) << std::endl; // -> 0
-std::cout << (c1 < c3) << std::endl; // -> 1
-std::cout << (c3 < c1) << std::endl; // -> 0
-```
-10. **(Bonus)** Modifiez l'implémentation de `print` pour qu'elle affiche `"As"`, `"Roi"`, `"Dame"` et `"Valet"` plutôt que les valeurs associées.  
+
+    ```cpp
+    std::cout << (c1 < c2) << std::endl; // -> 0
+    std::cout << (c1 < c3) << std::endl; // -> 1
+    std::cout << (c3 < c1) << std::endl; // -> 0
+    ```
+
+10. **(Bonus)** Modifiez l'implémentation de `print` pour qu'elle affiche `"As"`, `"Roi"`, `"Dame"` et `"Valet"` plutôt que les valeurs associées.
 Essayez de ne pas utiliser de `if` !
-11. **(Bonus)** Remplacez la fonction `print` par un opérateur de flux.  
+11. **(Bonus)** Remplacez la fonction `print` par un opérateur de flux. 
 Que devez-vous faire pour que cette fonction puisse accéder aux attributs de `Card`, sans changer leur visibilité ?
 12. **(Bonus)** Définissez deux `enum-class` (vous pouvez rechercher de quoi il s'agit sur Internet) `CardValue` et `CardColor`.
 Remplacez les types de `_value` et `_color` et adaptez le code pour que le programme compile, tout en conservant le même comportement.
@@ -75,30 +83,33 @@ Remplacez les types de `_value` et `_color` et adaptez le code pour que le progr
 Si vous ne précisez rien pour `_cards`, comment sera initialisé l'attribut ?  
 Même question pour `_score`.  
 Ajoutez un class-initializer pour assigner à `_score` la valeur 0.
-4. Vous allez maintenant définir une **fonction-membre statique** permettant de distribuer les cartes entre les joueurs. Voici le prototype attendu : `void Player::deal_all_cards(Player& p1, Player& p2);`.  
+4. Vous allez maintenant définir une **fonction-membre statique** permettant de distribuer les cartes entre les joueurs. Voici le prototype attendu : `void Player::deal_all_cards(Player& p1, Player& p2);`. 
 En ce qui concerne l'implémentation :
     - Commencez par définir une variable locale `std::vector<Card> all_cards`, dans laquelle vous ajoutez toutes les cartes possibles (vous pouvez utiliser deux boucles `for` imbriquées).
     - Copiez-collez les instructions ci-dessous (vous aurez besoin d'include `<algorithm>` et `<random>`). Elles permettent de mélanger le tableau de façon aléatoire.
-    ```cpp
-    std::random_device rd;
-    std::shuffle(all_cards.begin(), all_cards.end(), std::default_random_engine(rd()));
-    ```
+
+        ```cpp
+        std::random_device rd;
+        std::shuffle(all_cards.begin(), all_cards.end(), std::default_random_engine(rd()));
+        ```
+    
     - Ajoutez la première moitié de `all_cards` à la main du premier joueur et la seconde à la main du deuxième.
 5. Définissez un opérateur d'indice dans la classe `Player` pour récupérer la n-ième carte de sa main.  
 Vérifiez ensuite que vos fonctions se comportent comme prévu en ajoutant les instructions ci-dessous dans le `main` :
-```cpp
-Player p1 { "Gerald" };
-Player p2 { "Julien" };
-Player::deal_all_cards(p1, p2);
 
-for (auto i = 0; i < 16; ++i)
-{
-    p1[i].print();
-    std::cout << std::endl;
-    p2[i].print();
-    std::cout << std::endl;
-}
-```
+    ```cpp
+    Player p1 { "Gerald" };
+    Player p2 { "Julien" };
+    Player::deal_all_cards(p1, p2);
+
+    for (auto i = 0; i < 16; ++i)
+    {
+        p1[i].print();
+        std::cout << std::endl;
+        p2[i].print();
+        std::cout << std::endl;
+    }
+    ```
 
 ### Le jeu (30min) 
 
