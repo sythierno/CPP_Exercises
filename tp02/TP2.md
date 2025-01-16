@@ -25,6 +25,15 @@ Vous allez avoir besoin de représenter les éléments suivants :
     - la liste des cartes qu'il a en main
     - le nombre de plis emportés
 
+### Consignes et explications générales 
+
+Divers fichiers doivent être manipulés dans le cadre de ce TP. De manière générale, sauf indication contraire, les fichiers d'en-tête (`.hpp`) doivent contenir toutes les *déclarations*, tandis que les fichiers source (`.cpp`) doivent contenir toutes les *définitions*.
+
+Vous serez amenés à définir des fonctions-membres ou des attributs dits **statiques**:
+
+1. un **attribut statique** est partagé par toutes les instances d'une classe, et possèdera donc la même indépendamment de l'objet créé; toute modification de cette attribut se répercute donc sur les autres instances de la classe, puisqu'elles se partagent le même champ;
+1. une **fonction-membre statique** peut être utilisée sans instancier la classe; si `f` est une fonction-membre statique de la classe `C`, on pourra donc écrire directement `C::f(bla);` plutôt que `auto X = C(); X.f(bla);`
+    
 ### La classe `Card` (50min)
 
 1. Créez trois fichiers `Card.cpp`, `Card.hpp` et `main.cpp`.
@@ -113,7 +122,7 @@ Vérifiez ensuite que vos fonctions se comportent comme prévu en ajoutant les i
 
 ### Le jeu (30min) 
 
-1. Définissez un attribut statique `Player::turn_number` qui servira à contenir le nombre de tours de la partie.  
+1. Définissez un **attribut statique** `turn_number` pour `Player` qui servira à contenir le nombre de tours de la partie.  
 Quel mot-clef devez-vous utiliser pour transformer la déclaration de l'attribut en définition ?
 2. Ajoutez une fonction-membre statique `Player::play` prenant en paramètre les deux joueurs.  
 Dedans, vous afficherez les deux cartes jouées au tour courant.
