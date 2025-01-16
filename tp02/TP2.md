@@ -135,3 +135,6 @@ Assurez-vous qu'il puisse être utilisé sur des variables `const`.
 6. **(Bonus)** A quoi sert la fonction `std::this_thread::sleep_for` ?
 Utilisez-la dans votre code pour qu'une seconde s'écoule entre chaque pli.
 7. **(Bonus)** Modifiez votre code de manière à gérer l'égalité comme dans les règles officielles : on pose une carte face cachée, puis une carte face visible, et le gagnant remporte alors 3 points au lieu de 1.
+
+    1. dans un premier temps, attribuez 0 points aux joueurs si les nouvelles cartes visibles sont égales en valeur, ou si les joueurs terminent leurs paquets avant de pouvoir placer cette nouvelle carte;
+    1. ensuite, gérez les nouvelles égalités qui peuvent survenir un nombre arbitraire de fois; les points remportés seront soit la moitié des cartes déposées pour cette bataille s'il y a un vainqueur, soit 0 points si l'on vide les paquets avant de pouvoir conclure.
