@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
 
-void ajoute_double(const std::vector<int>& un, std::vector<int>& v) {
-    v.reserve(v.size() + un.size());
-    for (const auto n : un)
+void ajoute_double(std::vector<int>& v) {
+    auto size = v.size();
+    for (auto i = 0; i < size; i++)
     {
-        v.emplace_back(n * 2);
+        v.push_back(v[i] * 2);
     }
 }
 
@@ -20,7 +20,7 @@ void affiche(const std::vector<int>& v) {
 
 int main() {
     auto entiers = std::vector<int> {};
-    int  value   = 0;
+    auto value   = 0;
     while (1)
     {
         std::cin >> value;
@@ -44,8 +44,9 @@ int main() {
         }
     }
     affiche(entiers);
-    std::cout << "first: " << entiers[0] << "    last: " << entiers[entiers.size() - 1] << std::endl;
-    ajoute_double(entiers, entiers);
+    if (!entiers.empty())
+        std::cout << "first: " << entiers.front() << "    last: " << entiers.back() << std::endl;
+    ajoute_double(entiers);
 
     affiche(entiers);
     return 0;
