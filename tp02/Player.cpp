@@ -18,7 +18,7 @@ void Player::deal_all_cards(Player& p1, Player& p2) {
     {
         for (unsigned int j = 1; j < 5; j++)
         {
-            all_cards.emplace_back(Card { i, j });
+            all_cards.emplace_back(i, j);
         }
     }
 
@@ -51,15 +51,45 @@ bool Player::play(Player& p1, Player& p2) {
     {
         if (p1._cards[turn_number] < p2._cards[turn_number])
         {
-            std::cout << p2._name << " a gagné le tour" << std::endl;
+            std::cout << p2._name << " a gagné 1 point." << std::endl;
             p2._score++;
         }
         else
         {
-            std::cout << p1._name << " a gagné le tour" << std::endl;
+            std::cout << p1._name << " a gagné 1 point." << std::endl;
             p1._score++;
         }
     }
+    else {
+        turn_number++;
+        equality(p1, p2, 1);
+    }
     turn_number++;
-    return turn_number == 15;
+    return turn_number >= 15;
+}
+
+void Player::equality(Player& p1, Player& p2, int point_to_win) {
+    if (turn_number >= 15) {
+        return;
+    }
+    std::cout << "C'est une égalité, on rejoue !!" << std::endl;
+    std::cout << "Carte de " << p1._name << ": " << p1._cards[turn_number] << std::endl;
+    std::cout << "Carte de " << p2._name << ": " << p2._cards[turn_number] << std::endl;
+    if (!(p1._cards[turn_number] == p2._cards[turn_number]))
+    {
+        if (p1._cards[turn_number] < p2._cards[turn_number])
+        {
+            std::cout << p2._name << " a gagné " << point_to_win + 1 << " points." << std::endl;
+            p2._score += point_to_win + 1;
+        }
+        else
+        {
+            std::cout << p1._name << " a gagné " << point_to_win + 1 << " points." << std::endl;
+            p1._score += point_to_win + 1;
+        }
+    }
+    else {
+        turn_number++;
+        equality(p1, p2, ++point_to_win);
+    }
 }

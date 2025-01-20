@@ -8,8 +8,8 @@ Card::Card(CardValeur value, CardColor color)
 }
 
 Card::Card(unsigned int value, unsigned int color)
-    : _value { static_cast<CardValeur>(value) }
-    , _color { static_cast<CardColor>(color) } {
+    : Card{static_cast<CardValeur>(value), static_cast<CardColor>(color)} {
+        
 }
 
 void Card::print() const {

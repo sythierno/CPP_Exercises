@@ -17,8 +17,8 @@ int main() {
     // std::cout << (c1 < c3) << std::endl; // -> 1
     // std::cout << (c3 < c1) << std::endl; // -> 0
 
-    Player p1 { "Gerald" };
-    Player p2 { "Julien" };
+    Player p1 { "Val" };
+    Player p2 { "Rieu" };
     Player::deal_all_cards(p1, p2);
 
     // for (auto i = 0; i < 16; ++i)

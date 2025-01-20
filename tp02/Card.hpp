@@ -25,9 +25,6 @@ enum class CardValeur
 class Card
 {
 public:
-    static std::string string_from_color(CardColor color);
-
-    static std::string string_from_value(CardValeur value);
 
     Card(CardValeur value, CardColor color);
 
@@ -44,4 +41,7 @@ public:
 private:
     CardValeur _value;
     CardColor  _color;
+    static std::string string_from_color(CardColor color);
+
+    static std::string string_from_value(CardValeur value);
 };

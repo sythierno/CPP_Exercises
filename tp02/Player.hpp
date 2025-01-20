@@ -20,4 +20,5 @@ private:
     std::string       _name;
     std::vector<Card> _cards;
     unsigned int      _score;
+    static void equality(Player& p1, Player& p2, int point_to_win);
 };
