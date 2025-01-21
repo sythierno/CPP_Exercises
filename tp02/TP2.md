@@ -31,7 +31,7 @@ Divers fichiers doivent être manipulés dans le cadre de ce TP. De manière gé
 
 Vous serez amenés à définir des fonctions-membres ou des attributs dits **statiques**:
 
-1. un **attribut statique** est partagé par toutes les instances d'une classe, et possèdera donc la même indépendamment de l'objet créé; toute modification de cette attribut se répercute donc sur les autres instances de la classe, puisqu'elles se partagent le même champ;
+1. un **attribut statique** est partagé par toutes les instances d'une classe, et possèdera donc la même valeur indépendamment de l'objet créé; toute modification de cet attribut se répercute donc sur les autres instances de la classe, puisqu'elles se partagent le même champ;
 1. une **fonction-membre statique** peut être utilisée sans instancier la classe; si `f` est une fonction-membre statique de la classe `C`, on pourra donc écrire directement `C::f(bla);` plutôt que `auto X = C(); X.f(bla);`
     
 ### La classe `Card` (50min)
