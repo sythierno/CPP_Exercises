@@ -1,7 +1,5 @@
 #include "Player.hpp"
 
-#include "Tracker.hpp"
-
 #include <algorithm> // shuffle
 #include <iostream>  // cout, endl
 #include <random>    // default_random_engine, random_device
@@ -21,8 +19,6 @@ void Player::deal_all_cards(Player& p1, Player& p2)
         for (const auto& couleur : { "Coeur", "Pique", "Trèfle", "Carreau" })
             all_cards.emplace_back(valeur, couleur);
 
-    assert_no_copy("Dans deal_all_cards 1");
-
     // mélanger le paquet
     std::random_device rd;
     std::shuffle(all_cards.begin(), all_cards.end(), std::default_random_engine(rd()));
@@ -32,8 +28,6 @@ void Player::deal_all_cards(Player& p1, Player& p2)
         p1.push_front(all_cards[i]);
         p2.push_front(all_cards[i + 1]);
     }
-
-    assert_no_copy("Dans deal_all_cards 2");
 }
 
 void Player::push_front(Card card)

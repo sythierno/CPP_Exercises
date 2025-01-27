@@ -12,7 +12,7 @@ void assert_no_copy(std::string const& test_name)
         std::string bot(top.size(), '=');
         std::cerr << std::endl;
         std::cerr << top << std::endl;
-        std::cerr << " - Copies: " << Tracker::copies() << " (O attendues)" << std::endl;
+        std::cerr << " - Copies: " << Tracker::copies() << " (0 attendues)" << std::endl;
         std::cerr << " - En mémoire: " << Tracker::count() << std::endl;
         std::cerr << bot << std::endl;
         exit(1);
