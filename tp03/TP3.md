@@ -23,7 +23,7 @@ struct Wheel
 
 struct Car
 {
-    explicit Car(Driver& d)
+    Car(Driver& d)
     : driver { d }
     {}
 
