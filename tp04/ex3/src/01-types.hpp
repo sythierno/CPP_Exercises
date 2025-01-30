@@ -31,7 +31,7 @@
 
 // Question 3
 // WrappedString permet de stocker une chaîne et d'encapsuler ses accès en lecture et en écriture
-// Pour le constructeur, vous devez indiquer le type du paramètre qui permettra d'intialiser _content:
+// Pour le constructeur, vous devez indiquer le type du paramètre qui permettra d'initialiser _content:
 //  WrappedString(ANSWER_3A initial_content)
 #define ANSWER_3A
 // La fonction get_readonly_content() doit donner un accès en lecture seule à _content
