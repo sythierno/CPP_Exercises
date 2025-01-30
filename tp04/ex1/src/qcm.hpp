@@ -19,7 +19,7 @@
 // Le type char* est le mieux adapté pour représenter des chaînes de caractères.
 #define ANSWER_2
 
-// On ne peut pas définir de fonctions-membres dans une struct.
+// Dans une classe, il ne peut pas avoir plus d'un bloc `public` et un bloc `private`.
 #define ANSWER_3
 
 // Le littéral 0u est de type unsigned int.
@@ -38,7 +38,7 @@
 // Le mot-clef `auto` sert à définir des variables sans préciser leur valeur initiale.
 #define ANSWER_8
 
-// Le type `std::vector` sert à créer des tableaux alloués dynamiquement.
+// Le type `std::vector` sert à créer des tableaux dynamiques.
 #define ANSWER_9
 
 // Il faut toujours penser à appeler `delete` sur les pointeurs observants.
@@ -52,3 +52,6 @@
 // la destruction d'une instance o de  `MyBoxingClass` provoque la destruction de toutes les instances de
 // `MyBoxedClass` contenues dans o.name.
 #define ANSWER_12
+
+// Etant donné une fonction f
+#define ANSWER_10
