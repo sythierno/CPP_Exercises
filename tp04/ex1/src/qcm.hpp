@@ -50,8 +50,5 @@
 
 // Si une classe `MyBoxingClass` a un attribut `std::vector<MyBoxedClass> _data` alors, par défaut,
 // la destruction d'une instance o de  `MyBoxingClass` provoque la destruction de toutes les instances de
-// `MyBoxedClass` contenues dans o.name.
+// `MyBoxedClass` contenues dans o.date.
 #define ANSWER_12
-
-// Etant donné une fonction f
-#define ANSWER_10
