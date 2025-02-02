@@ -94,5 +94,6 @@
         "cfenv": "cpp",
         "typeindex": "cpp",
         "__nullptr": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/thierno/Documents/m1_ubuntu/cpp/CPP_Exercises/tp03/3-hrsoft"
 }
