@@ -18,8 +18,4 @@ public:
     const PhoneNumber& get_number() const { return _phoneNumber; }
 
     bool operator==(const PhoneBookEntry& op) const { return _name == op._name; }
-
-    const PhoneNumber* getPhoneNumber() const { return &_phoneNumber; }
-
-    bool isValid() const { return _phoneNumber.is_valid(); }
 };

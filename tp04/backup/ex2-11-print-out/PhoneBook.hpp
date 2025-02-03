@@ -12,7 +12,7 @@ private:
 public:
     bool add_entry(PhoneBookEntry phoneBook)
     {
-        if (!phoneBook.isValid())
+        if (!phoneBook.get_number().is_valid())
         {
 
             return false;
@@ -28,14 +28,14 @@ public:
         return true;
     }
 
-    const PhoneNumber* get_number(std::string const name) const
+    const PhoneNumber* get_number(const std::string& name) const
     {
 
         for (auto& phoneBook : _phoneBooks)
         {
             if (phoneBook.get_name() == name)
             {
-                return phoneBook.getPhoneNumber();
+                return &phoneBook.get_number();
             }
         }
         return nullptr;

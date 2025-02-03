@@ -27,7 +27,7 @@
 // Question 2
 // count_nb_elements permet de retourner le nombre d'éléments présents dans un tableau dynamique
 //  ANSWER_2A count_nb_elements(ANSWER_2B elements);
-#define ANSWER_2A int
+#define ANSWER_2A unsigned int
 #define ANSWER_2B const std::vector<int>&
 
 // Question 3
@@ -35,10 +35,12 @@
 // Pour le constructeur, vous devez indiquer le type du paramètre qui permettra d'intialiser _content:
 //  WrappedString(ANSWER_3A initial_content)
 #define ANSWER_3A const std::string&
+
 // La fonction get_readonly_content() doit donner un accès en lecture seule à _content
 // ANSWER_3B get_readonly_content() ANSWER_3C { return _content; }
 #define ANSWER_3B const std::string&
 #define ANSWER_3C const
+
 // La fonction get_modifiable_content() doit donner un accès en lecture et écriture à _content
 // ANSWER_3D get_modifiable_content() ANSWER_3E { return _content; }
 #define ANSWER_3D std::string&

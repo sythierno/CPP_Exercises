@@ -6,17 +6,11 @@
 class PhoneNumber
 {
 private:
-    std::vector<int> _nbrs = std::vector<int>(5);
+    std::vector<int> _nbrs;
 
 public:
     PhoneNumber(int un, int deux, int trois, int quatre, int cinq)
-    {
-        _nbrs[0] = un;
-        _nbrs[1] = deux;
-        _nbrs[2] = trois;
-        _nbrs[3] = quatre;
-        _nbrs[4] = cinq;
-    };
+        : _nbrs { std::vector { un, deux, trois, quatre, cinq } } {};
 
     bool is_valid() const
     {
@@ -41,16 +35,14 @@ public:
 
     friend std::ostream& operator<<(std::ostream& op, const PhoneNumber& phone)
     {
-        auto result = std::string();
-        for (int i = 0; i < 5; i++)
+        for (auto& i : phone._nbrs)
         {
-            auto toAdd = std::to_string(phone[i]);
-            if (toAdd.length() == 1)
+            if (i < 10)
             {
-                toAdd = "0" + toAdd;
+                op << 0;
             }
-            result += toAdd;
+            op << i;
         }
-        return op << result;
+        return op;
     }
 };
