@@ -31,16 +31,16 @@ Divers fichiers doivent être manipulés dans le cadre de ce TP. De manière gé
 
 Vous serez amenés à définir des fonctions-membres ou des attributs dits **statiques**:
 
-1. un **attribut statique** est partagé par toutes les instances d'une classe, et possèdera donc la même indépendamment de l'objet créé; toute modification de cette attribut se répercute donc sur les autres instances de la classe, puisqu'elles se partagent le même champ;
+1. un **attribut statique** est partagé par toutes les instances d'une classe, et possèdera donc la même valeur indépendamment de l'objet créé; toute modification de cet attribut se répercute donc sur les autres instances de la classe, puisqu'elles se partagent le même champ;
 1. une **fonction-membre statique** peut être utilisée sans instancier la classe; si `f` est une fonction-membre statique de la classe `C`, on pourra donc écrire directement `C::f(bla);` plutôt que `auto X = C(); X.f(bla);`
     
 ### La classe `Card` (50min)
 
 1. Créez trois fichiers `Card.cpp`, `Card.hpp` et `main.cpp`.
-2. Dans le fichier `Card.hpp`, définissez une classe `Card` avec deux attributs privés `_value` et `_color`.  
+2. Dans le fichier `Card.hpp`, déclarez une classe `Card` avec deux attributs privés `_value` et `_color`.  
 Sachant que `_value` ne peut pas être négatif, quel type pouvez-vous utiliser ?  
 Pour `_color`, vous pouvez utiliser `std::string`.
-3. Définissez un constructeur à deux paramètres permettant d'initialiser les deux attributs de la classe.  
+3. Déclarez un constructeur à deux paramètres permettant d'initialiser les deux attributs de la classe.  
 Vous placerez l'implémentation de cette fonction dans le fichier `Card.cpp`.
 4. Ajoutez une fonction-membre `print` qui affichera dans un premier temps : `"<value> de <color>"`. Par exemple, pour le roi de carreau, on pourra afficher `"13 de Carreau"` (sans saut de ligne final).
 5. Dans le fichier `main.cpp`, définissez une fonction `main` et ajoutez-y le code suivant pour vérifier que tout fonctionne :
@@ -94,7 +94,7 @@ Même question pour `_score`.
 Ajoutez un class-initializer pour assigner à `_score` la valeur 0.
 4. Vous allez maintenant définir une **fonction-membre statique** permettant de distribuer les cartes entre les joueurs. Voici le prototype attendu : `void Player::deal_all_cards(Player& p1, Player& p2);`. 
 En ce qui concerne l'implémentation :
-    - Commencez par définir une variable locale `std::vector<Card> all_cards`, dans laquelle vous ajoutez toutes les cartes possibles (vous pouvez utiliser deux boucles `for` imbriquées).
+    - Commencez par déclarer une variable locale `std::vector<Card> all_cards`, dans laquelle vous ajoutez toutes les cartes possibles (vous pouvez utiliser deux boucles `for` imbriquées).
     - Copiez-collez les instructions ci-dessous (vous aurez besoin d'include `<algorithm>` et `<random>`). Elles permettent de mélanger le tableau de façon aléatoire.
 
         ```cpp
