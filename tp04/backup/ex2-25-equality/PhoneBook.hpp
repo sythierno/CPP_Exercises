@@ -17,7 +17,7 @@ public:
 
             return false;
         }
-        for (auto& _phoneBook : _phoneBooks)
+        for (const auto& _phoneBook : _phoneBooks)
         {
             if (_phoneBook == phoneBook)
             {
@@ -31,7 +31,7 @@ public:
     const PhoneNumber* get_number(const std::string& name) const
     {
 
-        for (auto& phoneBook : _phoneBooks)
+        for (const auto& phoneBook : _phoneBooks)
         {
             if (phoneBook.get_name() == name)
             {

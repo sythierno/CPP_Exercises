@@ -29,7 +29,7 @@
 #define ANSWER_5 false
 
 // On peut utiliser `inline` pour définir des attributs statiques directement dans la classe.
-#define ANSWER_6 false
+#define ANSWER_6 true
 
 // Si une fonction est définie dans deux fichiers-objets différents, l'erreur se produit lors de la phase de
 // build.

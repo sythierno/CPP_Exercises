@@ -14,9 +14,9 @@ public:
 
     bool is_valid() const
     {
-        for (int i = 0; i < 5; i++)
+        for (const auto nb : _nbrs)
         {
-            if (_nbrs[i] < 0 || _nbrs[i] > 99)
+            if (nb < 0 || nb > 99)
             {
                 return false;
             }

@@ -10,14 +10,13 @@ private:
     std::list<PhoneBookEntry> _phoneBooks;
 
 public:
-    bool add_entry(PhoneBookEntry phoneBook)
+    bool add_entry(const PhoneBookEntry& phoneBook)
     {
         if (!phoneBook.get_number().is_valid())
         {
-
             return false;
         }
-        for (auto& _phoneBook : _phoneBooks)
+        for (const auto& _phoneBook : _phoneBooks)
         {
             if (_phoneBook == phoneBook)
             {
@@ -31,7 +30,7 @@ public:
     const PhoneNumber* get_number(const std::string& name) const
     {
 
-        for (auto& phoneBook : _phoneBooks)
+        for (const auto& phoneBook : _phoneBooks)
         {
             if (phoneBook.get_name() == name)
             {
