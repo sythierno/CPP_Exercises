@@ -7,7 +7,7 @@
 
 class Person
 {
-    friend std::ostream& operator<<(std::ostream& o, Person p);
+    friend std::ostream& operator<<(std::ostream& o, const Person& p);
 
 public:
     Person(std::string given_name, std::string family_name)

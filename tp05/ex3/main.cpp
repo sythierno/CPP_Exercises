@@ -9,23 +9,23 @@ int main()
 {
     std::cout << "== Partie 1 ====================================" << std::endl;
     {
-        // Person p1 { "Victor", "Marsault" };
-        // Link   link1 { p1 };
-        // std::cout << p1 << " | on attend: VM:0" << std::endl;
-        // std::cout << link1.value() << " | on attend: VM:0" << std::endl;
-        // ++(link1.value()); // On peut modifier la valeur de retour de Link::value()
-        // std::cout << link1.value() << " | on attend: VM:1" << std::endl;
+        Person p1 { "Victor", "Marsault" };
+        Link   link1 { p1 };
+        std::cout << p1 << " | on attend: VM:0" << std::endl;
+        std::cout << link1.value() << " | on attend: VM:0" << std::endl;
+        ++(link1.value()); // On peut modifier la valeur de retour de Link::value()
+        std::cout << link1.value() << " | on attend: VM:1" << std::endl;
         // // On a fait qu'une copie pour tout ceci
-        // assert_copy_count_since_last_check("Link 1", 1);
+        assert_copy_count_since_last_check("Link 1", 1);
         // // Et on a que 2 Person en mémoire
-        // assert_mem_count("Link 2", 2);
+        assert_mem_count("Link 2", 2);
 
-        // const Link link2 { Person { "Céline", "Noël" } };
-        // std::cout << link2.value() << std::endl; // On peut appeler Link::value() sur un const Link
+        const Link link2 { Person { "Céline", "Noël" } };
+        std::cout << link2.value() << std::endl; // On peut appeler Link::value() sur un const Link
         // // Ces deux dernières instructions n'ont provoqué aucune copie
-        // assert_no_copy_since_last_check("Link 3");
+        assert_no_copy_since_last_check("Link 3");
         // // et on a maintenant 3 personnes en mémoire
-        // assert_mem_count("Link 4", 3);
+        assert_mem_count("Link 4", 3);
     }
     // On a plus aucune Person en mémoire
     assert_mem_count("Link fin", 0);
@@ -33,31 +33,31 @@ int main()
     std::cout << std::endl;
     std::cout << "== Partie 2 ====================================" << std::endl;
     {
-        // LinkedList list;
-        // std::cout << std::boolalpha << list.empty() << " | on attend:  true" << std::endl;
-        // std::cout << list.size() << " | on attend:  0" << std::endl;
+        LinkedList list;
+        std::cout << std::boolalpha << list.empty() << " | on attend:  true" << std::endl;
+        std::cout << list.size() << " | on attend:  0" << std::endl;
 
-        // Person vm { "Victor", "Marsault" };
-        // list.push_back(vm);
-        // std::cout << std::boolalpha << list.empty() << " | on attend:  false" << std::endl;
-        // std::cout << list.size() << " | on attend:  1" << std::endl;
+        Person vm { "Victor", "Marsault" };
+        list.push_back(vm);
+        std::cout << std::boolalpha << list.empty() << " | on attend:  false" << std::endl;
+        std::cout << list.size() << " | on attend:  1" << std::endl;
         // // Ceci a provoqué la copie de vm, mais une seule fois
-        // assert_copy_count_since_last_check("Basic 1", 1);
+        assert_copy_count_since_last_check("Basic 1", 1);
 
-        // list.push_back(Person { "Céline", "Noël" });
-        // Person hd { "Henri", "Derycke" };
-        // list.push_back(std::move(hd));
-        // std::cout << list.size() << " | on attend:  3" << std::endl;
+        list.push_back(Person { "Céline", "Noël" });
+        Person hd { "Henri", "Derycke" };
+        list.push_back(std::move(hd));
+        std::cout << list.size() << " | on attend:  3" << std::endl;
         // // Ces déplacement n'ont pas provoqué de copies
-        // assert_no_copy_since_last_check("Basic 2");
+        assert_no_copy_since_last_check("Basic 2");
         // // On a ici 5 personnes en mémoire (les trois dans la liste) plus vm, plus la "hd" vide
-        // assert_mem_count("Basic 3", 5);
+        assert_mem_count("Basic 3", 5);
 
-        // const LinkedList& list_ref = list;
-        // std::cout << list_ref.front() << " | on attend VM:0" << std::endl;
-        // std::cout << list_ref.back() << " | on attend HD:0" << std::endl;
+        const LinkedList& list_ref = list;
+        std::cout << list_ref.front() << " | on attend VM:0" << std::endl;
+        std::cout << list_ref.back() << " | on attend HD:0" << std::endl;
 
-        // std::cout << list_ref << " | on attend { CN:0, VM:0, HD:0 } " << std::endl;
+        std::cout << list_ref << " | on attend { CN:0, VM:0, HD:0 } " << std::endl;
         // // Pas besoin de copie en plus.
         // assert_no_copy_since_last_check("Basic 2");
     }

@@ -1,6 +1,6 @@
 #include "Person.hpp"
 
-std::ostream& operator<<(std::ostream& o, Person p)
+std::ostream& operator<<(std::ostream& o, const Person& p)
 {
     if (!p._given_name.empty())
         o << p._given_name[0];
