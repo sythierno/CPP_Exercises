@@ -17,7 +17,7 @@ public:
 
     void operator++() { _age++; }
 
-    bool operator==(Person other);
+    bool operator==(const Person& other) const;
 
 private:
     std::string _given_name;
