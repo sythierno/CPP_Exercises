@@ -32,15 +32,14 @@ public:
         return *this;
     }
 
-    // Constructeur de déplacement
-    Tracker(Tracker&& o)
+    Tracker(Tracker&& o) noexcept
         : _id { o._id }
     {
         _count++;
     }
 
     // Opérateur d'affectation par déplacement
-    Tracker& operator=(Tracker&& other) = default;
+    Tracker& operator=(Tracker&& other) noexcept = default;
 
     // Destructeur
     ~Tracker() { --_count; }

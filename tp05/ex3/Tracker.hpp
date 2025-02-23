@@ -29,13 +29,13 @@ public:
         return *this;
     }
 
-    Tracker(Tracker&& o)
+    Tracker(Tracker&& o) noexcept
         : _id { o._id }
     {
         _count++;
     }
 
-    Tracker& operator=(Tracker&& other) = default;
+    Tracker& operator=(Tracker&& other) noexcept = default;
 
     ~Tracker() { --_count; }
 
