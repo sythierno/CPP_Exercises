@@ -9,14 +9,12 @@
 class Tracker
 {
 public:
-    // Constructeur par défaut
     Tracker()
         : _id { ++_next_id }
     {
         ++_count;
     }
 
-    // Constructeur de copie
     Tracker(const Tracker& o)
         : _id { o._id }
     {
@@ -24,7 +22,6 @@ public:
         ++_copies;
     }
 
-    // Opérateur d'affectation par copie
     Tracker& operator=(const Tracker& other)
     {
         _id = other._id;
@@ -38,10 +35,8 @@ public:
         _count++;
     }
 
-    // Opérateur d'affectation par déplacement
     Tracker& operator=(Tracker&& other) noexcept = default;
 
-    // Destructeur
     ~Tracker() { --_count; }
 
     static int count() { return _count; }
@@ -55,8 +50,5 @@ private:
     inline static int _copies  = 0; // Nombre de fois que des Tracker ont été copié.
     inline static int _next_id = 0;
 };
-
-void assert_no_copy(std::string const& test_name);
-void assert_mem_count(std::string const& test_name, int count);
 
 // Il est interdit de modifier ce fichier !!
