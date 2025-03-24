@@ -22,7 +22,7 @@ public:
 
     StringInstancePair(const StringInstancePair& other)
         : _string { other._string }
-        , _tracker { std::make_unique<Tracker>(*(other._tracker.get())) }
+        , _tracker { std::make_unique<Tracker>(*other._tracker) }
     {}
 
     StringInstancePair& operator=(const StringInstancePair& other) = default;

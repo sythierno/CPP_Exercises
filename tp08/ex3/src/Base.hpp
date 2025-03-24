@@ -12,7 +12,7 @@ public:
         : _type { std::move(type) }
     {}
 
-    virtual ~Base() noexcept                                    = default;
+    virtual ~Base()                                             = default;
     virtual bool                  is_null() const               = 0;
     virtual std::string           to_string() const             = 0;
     virtual bool                  operator==(const Base& other) = 0;
