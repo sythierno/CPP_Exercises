@@ -36,8 +36,8 @@ uint8_t mandelbrot(size_t i, size_t j)
 
 int main()
 {
-    // const auto image = ...;
-    // image_lib::save(image, "images/mandelbrot.png");
+    const auto image = Image<uint8_t, 5, 5>();
+    image_lib::save(image, "images/mandelbrot.png");
 
     return 0;
 }
