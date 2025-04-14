@@ -29,12 +29,10 @@ template <>
 struct hash<Point2d>
 {
     std::size_t operator()(const Point2d& point) const {
-        return (point._x * point._x + point._x + 2 * point._x * point._y + 3 * point._y +
-                point._y * point._y) /
-               2;
+        return (point._x * point._x + point._x + 2 * point._x * point._y + 3 * point._y + point._y * point._y) / 2;
     }
 };
-} // namespace std
+}
 
 class Point2dHash
 {
@@ -54,7 +52,7 @@ public:
     };
 };
 
-auto printMap = [](const std::unordered_map<Point2d, Content>& map)
+void printMap(const std::unordered_map<Point2d, Content>& map)
 {
     for (const auto& [key, value] : map)
     {
