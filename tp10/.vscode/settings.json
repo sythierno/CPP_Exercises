@@ -1,10 +1,11 @@
 {
     "files.associations": {
+        "cstddef": "cpp",
+        "string": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
         "cstdarg": "cpp",
-        "cstddef": "cpp",
         "cstdio": "cpp",
         "cstdlib": "cpp",
         "cstring": "cpp",
@@ -39,7 +40,6 @@
         "optional": "cpp",
         "random": "cpp",
         "ratio": "cpp",
-        "string": "cpp",
         "string_view": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
@@ -65,7 +65,6 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "__nullptr": "cpp",
-        "__locale": "cpp"
+        "__nullptr": "cpp"
     }
 }

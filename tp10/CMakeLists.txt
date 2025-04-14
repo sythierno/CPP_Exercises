@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
-project(TP10)
+project(tp10)
 
 add_executable(tp10
+    lib/image_lib.hpp
+    lib/image_lib.hpp
+    lib/stb_image_write.h
+    lib/stb_image.h
     src/mandelbrot.cpp
     src/image.hpp
 )
