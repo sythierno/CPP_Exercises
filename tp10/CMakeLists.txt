@@ -21,3 +21,13 @@ add_executable(blending
 )
 target_compile_features(blending PRIVATE cxx_std_17)
 
+add_executable(tranceparence
+    lib/stb_image_write.h
+    lib/stb_image.h
+    lib/image_lib.hpp
+    lib/image_lib.cpp
+    src/transparency_mask.cpp
+    src/image.hpp
+)
+target_compile_features(tranceparence PRIVATE cxx_std_17)
+
