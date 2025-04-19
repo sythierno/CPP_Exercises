@@ -4,7 +4,7 @@
 
 TEST_CASE("Above the static limit, elements are moved to the dynamic storage")
 {
-    auto  ctn   = HybridArray<unsigned, 2> {};
+    auto ctn = HybridArray<unsigned, 2> {};
 
     auto& elm_1 = ctn.push_back(30u);
     auto& elm_2 = ctn.push_back(60u);
@@ -15,7 +15,7 @@ TEST_CASE("Above the static limit, elements are moved to the dynamic storage")
     auto& elm_3 = ctn.push_back(90u);
     ctn.push_back(120u);
 
-    // Previous iterators are invalidated, as objects are moved from the static storage to the dynamic one 
+    // Previous iterators are invalidated, as objects are moved from the static storage to the dynamic one
     REQUIRE(&elm_1 != &ctn[0]);
     REQUIRE(&elm_2 != &ctn[1]);
 
@@ -30,12 +30,12 @@ TEST_CASE("Above the static limit, elements are moved to the dynamic storage")
     REQUIRE(std::distance(&ctn[2], &ctn[3]) == 1);
 
     // The size function returns the correct value
-    REQUIRE(ctn.size() == 3);
+    REQUIRE(ctn.size() == 4);
 
     for (auto i = 0u; i < 100u; ++i)
     {
         ctn.push_back(i);
     }
 
-    REQUIRE(ctn.size() == 103);
+    REQUIRE(ctn.size() == 104);
 }
