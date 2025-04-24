@@ -19,13 +19,13 @@ std::enable_if_t<is_c_string_v<T>, std::string> to_string(const T& data)
 }
 
 template <typename T>
-constexpr bool is_num = std::is_arithmetic_v<T>;
-
-template <typename T>
 std::enable_if_t<is_std_string_v<T>, std::string> to_string(const T& data)
 {
     return data;
 }
+
+template <typename T>
+constexpr bool is_num = std::is_arithmetic_v<T>;
 
 template <typename T>
 std::enable_if_t<is_num<T>, std::string> to_string(const T& data)

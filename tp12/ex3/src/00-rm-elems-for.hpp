@@ -7,4 +7,4 @@
 #define ANSWER_3
 #define ANSWER_4 *it < 0
 #define ANSWER_5 it = values.erase(it)
-#define ANSWER_6 ++i
+#define ANSWER_6 ++it
